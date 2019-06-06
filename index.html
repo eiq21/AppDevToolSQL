@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="src/css/semantic.min.css" />
+    <script>
+      const $ = (jQuery = require("jquery"));
+    </script>
+    <script src="src/js/semantic.min.js"></script>
+  </head>
+  <body>
+    <div class="ui center aligned login grid">
+            <div class="ui login dimmer">
+              <div class="ui big text loader">"Logging in"</div>
+            </div>
+
+            <div class="ui authenticator dimmer">
+              <div class="ui big text loader">
+                "Awaiting Login Request"
+              </div>
+            </div>
+    
+          <div class="row">
+            <div class="ten wide column">
+                    <h2 class="ui icon grey login header">
+                      <i class="circular green user icon"></i>
+                      "Udemy Login"
+                    </h2>
+            </div>
+          </div>
+
+          <div class="row">
+              <div class="ten wide column">
+                <form class="ui form">
+                <div class="field">                   
+                   <div class="ui fluid label checkbox">
+                    <input type="checkbox" name="business" id="business">
+                    <label for="business">"Udemy Business" ?</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <input type="text" id="subdomain" name="subdomain" placeholder=""Udemy Business Name"" style="display: none">
+                </div>
+              </form>
+              <div class="ui horizontal divider">
+                Choose Login Method
+              </div>
+              <button class="ui fluid green button" type="button" onclick="loginWithUdemy()">"Login Using Credentials"</button>
+              <div class="ui horizontal divider">
+                Or
+              </div>
+              <div class="ui fluid icon buttons">
+                <button class="ui teal login disabled authenticator button"><i class="user secret icon"></i> Authenticator</button>
+                <div class="or"></div>
+                <button class="ui blue button" onclick="loginWithAccessToken()"><i class="key icon"></i> Access Token</button>
+              </div>
+              </div>
+          </div>
+
+  </div>
+
+     <div class="ui dashboard">    
+            <div class="ui logout dimmer">
+              <div class="ui big text loader">"Logging Out"</div>
+            </div>  
+            <div class="ui courses dimmer">
+              <div class="ui big text loader">"Loading Courses"</div>
+            </div>
+             <div class="ui course dimmer">
+              <div class="ui big text loader">"Getting Info"</div>
+            </div>
+            <div class="ui about dimmer">
+              <div class="ui big text loader">"Checking for Updates"</div>
+            </div>
+              <div class="ui visible fixed vertical inverted sidebar labeled icon menu ${settings.get('general.language') == "Arabic" ? "right":"left"}">
+                <a class="active red courses-sidebar item">
+                  <i class="file video icon"></i>
+                  "Courses"
+                </a>
+                <a class="downloads-sidebar item">
+                  <i class="download icon"></i>
+                  "Downloads"
+                </a>
+               <a class="settings-sidebar item">
+                  <i class="wrench icon"></i>
+                  "Settings"
+                </a>
+                <a class="about-sidebar item">
+                  <i class="info icon"></i>
+                  "About"
+                </a>
+                <a class="logout-sidebar item">
+                  <i class="power off icon"></i>
+                  "Logout"
+                </a>
+              </div>
+                  <div class="content">
+
+                      <div class="ui courses section">
+                        <form class="ui search form">
+                        <div class="ui fluid search">
+                          <div class="ui fluid icon input">
+                            <input class="prompt" type="text" placeholder=""Search Courses"">
+                            <i class="search icon"></i>
+                          </div>
+                        </div>
+                        </form>
+                        <div class="ui divided unstackable courses items">
+                        </div>
+                      </div>
+
+                    <div class="ui downloads section">
+                        <h5 class="ui top attached header">
+                              <i class="ui download icon"></i> "Downloads"
+                        </h5>
+                        <div class="ui divided unstackable courses items attached segment">
+                        </div>
+                      </div>
+
+                      <div class="ui settings section"> 
+                      <form class="ui form">
+                        <h5 class="ui top attached  header">
+                              <i class="ui download icon"></i> "Download Settings"
+                          </h5>
+                            <div class="ui attached  segment">
+                                <div class="field">
+                                      <label>"Download Path"</label>
+                                    <div class="ui action input">
+                                        <input type="text" readonly name="downloadpath">
+                                        <label class="ui icon button btn-file" onclick="selectDownloadPath()">
+                                             <i class="folder icon"></i>
+                                        </label>
+                                    </div>
+                                </div>         
+                              <div class="field">
+                                <div class="ui checkbox">
+                                    <input type="checkbox" name="enabledownloadstartend">
+                                    <label>"Enable Download Start/End"</label>
+                                  </div>
+                                </div>
+                              <div class="two unstackable fields">
+                                  <div class="field">
+                                    <label>"Download Start"</label>
+                                    <input placeholder=""Start Download at"" type="number" min="1" name="downloadstart">
+                                  </div>
+                                  <div class="field">
+                                    <label>"Download End"</label>
+                                    <input placeholder=""End Download at"" type="number" min="1" name="downloadend">
+                                  </div>
+                                </div>
+                                  <div class="ui  divider"></div>
+                                    <div class="field">
+                                      <div class="ui checkbox">
+                                          <input type="checkbox" name="skipattachments">
+                                          <label>"Skip Attachments"</label>
+                                        </div>
+                                      </div>
+                                    <div class="field">
+                                      <label>"Video Quality"</label>
+                                      <div class="ui fluid search selection dropdown">
+                                          <input type="hidden" name="videoquality">
+                                          <i class="dropdown icon"></i>
+                                          <div class="default text"></div>
+                                          <div class="menu">
+                                          <div class="item" data-value="Auto">"Auto"</div>
+                                          <div class="item" data-value="Lowest">"Lowest"</div>
+                                          <div class="item" data-value="360p">360p</div>
+                                          <div class="item" data-value="480p">480p</div>
+                                          <div class="item" data-value="720p">720p</div>
+                                          <div class="item" data-value="1080p">1080p</div>
+                                          <div class="item" data-value="Highest">"Highest"</div>
+                                        </div>
+                                         </div>
+                                    </div>
+                                    <div class="field">
+                                      <div class="ui checkbox">
+                                          <input type="checkbox" name="skipsubtitles">
+                                          <label>"Skip Subtitles"</label>
+                                        </div>
+                                      </div>
+
+                              </div>
+                          <h5 class="ui top attached  header">
+                              <i class="ui setting icon"></i> "Application Settings"
+                          </h5>
+
+                          <div class="ui attached segment">
+                             <div class="field">
+                                      <label>"Language (Requires App Restart)"</label>
+                                      <div class="ui fluid search selection language dropdown">
+                                          <input type="hidden" name="language">
+                                          <i class="dropdown icon"></i>
+                                          <div class="default text"></div>
+                                          <div class="menu">
+                                          <div class="item" data-value="English">English</div>
+                                        </div>
+                                      </div>
+                                </div>
+                            </div>
+
+                              <div class="ui horizontal divider"></div>
+                              <button class="ui fluid green button" type="submit">"Save"</button>
+                          </form>
+
+                      </div>
+
+                      <div class="ui about section">   
+                          <div class="ui segment">
+                            <h4 class="ui center aligned icon header">
+                              <i class="grey file code outline icon"></i>
+                              Udeler v${appVersion}
+                            </h4>
+                            <button class="ui tiny fluid basic check-updates button">"Check for updates"</button>
+                            <h3 class="ui header">"Links"</h3>
+                            <div class="ui relaxed divided list">
+                              <div class="item">
+                                <i class="large github middle aligned icon"></i>
+                                <div class="content">
+                                  <a class="header" href="https://github.com/FaisalUmair/udemy-downloader-gui">FaisalUmair/udemy-downloader-gui</a>
+                                  <div class="description">"Repository"</div>
+                                </div>
+                              </div>
+                              <div class="item">
+                                <i class="large github middle aligned icon"></i>
+                                <div class="content">
+                                  <a class="header" href="https://github.com/FaisalUmair">FaisalUmair</a>
+                                  <div class="description">"Developer"</div>
+                                </div>
+                              </div>
+                              <div class="item">
+                                <i class="large world middle aligned icon"></i>
+                                <div class="content">
+                                  <a class="header" href="http://thewebartisans.net/">thewebartisans.net</a>
+                                  <div class="description">"Website"</div>
+                                </div>
+                              </div>
+                            </div>
+                            <h3 class="ui header">"Development"</h3>
+                              <div class="ui relaxed divided list">
+                                <div class="item">
+                                  <i class="large github middle aligned icon"></i>
+                                  <div class="content">
+                                    <a class="header" href="https://github.com/FaisalUmair/udemy-downloader-gui/issues">udemy-downloader-gui/issues</a>
+                                    <div class="description">"Report Bug"</div>
+                                  </div>
+                                </div>
+                                <div class="item">
+                                  <i class="large github middle aligned icon"></i>
+                                  <div class="content">
+                                    <a class="header" href="https://github.com/FaisalUmair/udemy-downloader-gui/pulls">udemy-downloader-gui/pulls</a>
+                                    <div class="description">"Contribute"</div>
+                                  </div>
+                                </div>
+                              </div>
+                            <h3 class="ui header">Donate</h3>
+                              <p>
+                              "Udeler is free and without any ads. If you appreciate that, please consider donating to the Developer."
+                              </p>
+                              <br>
+                              <a href="https://paypal.me/UdelerDonate" class="ui centered donate grid">
+                                <img src="assets/images/donate.png" alt="Donate"/>
+                              </a>
+                          </div>
+                      </div>
+                </div>
+     </div>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "appdevtoolsql",
+  "version": "0.1.0",
+  "description": "Application desktop with Electron JS and Python",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eiq21/AppDevToolSQL.git"
+  },
+  "keywords": [
+    "Electron"
+  ],
+  "author": "Enrique Inca",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eiq21/AppDevToolSQL/issues"
+  },
+  "homepage": "https://github.com/eiq21/AppDevToolSQL#readme",
+  "devDependencies": {
+    "electron": "^5.0.2"
+  },
+  "dependencies": {
+    "jquery": "^3.4.1"
+  }
+}
