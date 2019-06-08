@@ -1,64 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-    <link rel="stylesheet" href="src/css/semantic.min.css" />
-    <link rel="stylesheet" href="src/css/style.css" />
 
-    <script type="text/javascript">
-      window.$ = window.jQuery = require("jquery");
-    </script>
-    <script src="src/js/semantic.min.js"></script>
-  </head>
-  <body>
-    <div class="ui top attached demo menu">
-      <a class="item"> <i class="sidebar icon"></i> Menu </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <link rel="stylesheet" href="src/css/semantic.min.css" />
+  <link rel="stylesheet" href="src/css/style.css" />
+
+  <script type="text/javascript">
+    window.$ = window.jQuery = require("jquery");
+  </script>
+  <script src="src/js/semantic.min.js"></script>
+</head>
+
+<body>
+  <div class="ui top attached demo menu">
+    <a class="item"> <i class="sidebar icon"></i> Menu </a>
+  </div>
+  <div class="ui bottom attached segment">
+    <div class="ui visible fixed inverted labeled icon left inline vertical demo sidebar menu">
+      <a class="generate-sidebar active teal item">
+        <i class="home icon"></i> Generar script
+      </a>
+      <a class="settings-sidebar item">
+        <i class="block layout icon"></i> Configuración
+      </a>
     </div>
-    <div class="ui bottom attached segment">
-      <div
-        class="ui visible fixed inverted labeled icon left inline vertical demo sidebar menu"
-      >
-        <a class="generate-sidebar active teal item">
-          <i class="home icon"></i> Generar script
-        </a>
-        <a class="settings-sidebar item">
-          <i class="block layout icon"></i> Configuración
-        </a>
-      </div>
-      <div class="pusher">
-        <div class="content">
-          <div class="ui generate section">
-            <p>
-              Generate - Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Ipsum culpa qui, unde repellendus voluptates obcaecati
-              exercitationem laudantium aspernatur accusamus tempore sint
-              commodi fugiat aperiam cum iste sed recusandae praesentium quidem.
-            </p>
+    <div class="pusher">
+      <div class="content">
+        <div class="ui generate section">
+          <div class="ui form">
+            <div class="field">
+              <label>Name</label>
+              <input id="txtName" type="text" name="first-name" placeholder="name">
+            </div>
+            <div class="field">
+              <label>Hi</label>
+              <label id="lblName" for="name"></label>
+            </div>
+            <button id="btnHi" class="ui button" onclick="app.Hi();" type="submit">Saludar</button>
           </div>
-          <div class="ui settings section">
-            <p>
-              settings - Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Ipsum culpa qui, unde repellendus voluptates obcaecati
-              exercitationem laudantium aspernatur accusamus tempore sint
-              commodi fugiat aperiam cum iste sed recusandae praesentium quidem.
-            </p>
-          </div>
+        </div>
+        <div class="ui settings section">
+          <p>
+            settings - Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Ipsum culpa qui, unde repellendus voluptates obcaecati
+            exercitationem laudantium aspernatur accusamus tempore sint
+            commodi fugiat aperiam cum iste sed recusandae praesentium quidem.
+          </p>
         </div>
       </div>
     </div>
-    <script src="src/js/app.js"></script>
-    <script type="text/javascript">
-      (function($) {
-        $(".ui.sidebar")
-          .sidebar({
-            context: $(".bottom.segment")
-          })
-          .sidebar("attach events", ".menu .item");
-        app.setEvents();
-      })(jQuery);
-    </script>
-  </body>
+  </div>
+  <script src="src/js/app.js"></script>
+  <script type="text/javascript">
+    (function ($) {
+      $(".ui.sidebar")
+        .sidebar({
+          context: $(".bottom.segment")
+        })
+        .sidebar("attach events", ".menu .item");
+      app.setEvents();
+    })(jQuery);
+  </script>
+</body>
+
 </html>
