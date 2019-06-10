@@ -1,0 +1,9 @@
+{
+  "SQL": {
+    "server": "DEVPC\\SQL2017",
+    "user": "sa",
+    "password": "Malaga21",
+    "database": "Demo01",
+    "database_default": "master"
+  }
+}

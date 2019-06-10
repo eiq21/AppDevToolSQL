@@ -1,30 +1,23 @@
 {
-    "path":{
-        "path_out":"D:\\github\\ToolDevPython\\FILES\\OUT\\{}",
-        "path_in":"D:\\github\\ToolDevPython\\FILES\\IN"
-    },
-    "credentials_database":{
-        "server":"AWNTS74",
-        "user":"sa",
-        "password":"C0n$ult0r@$",
-        "database":"BelcorpPeru",
-        "database_default":"master"
-    },
-    "countries":{
-        "PE":"Peru",
-        "EC":"Ecuador",
-        "CO":"Colombia",
-        "DO":"Dominicana",
-        "SV":"Salvador",
-        "CR":"CostaRica",
-        "BO":"Bolivia",
-        "MX":"Mexico",
-        "CL":"Chile",
-        "GT":"Guatemala",
-        "PA":"Panama",
-        "PR":"PuertoRico"
-    },
-    "suffix":{
-        "MejoraContinua":"MC"
-    }
+  "path": {
+    "path_out": "D:\\github\\ToolDevPython\\FILES\\OUT\\{}",
+    "path_in": "D:\\github\\ToolDevPython\\FILES\\IN"
+  },
+  "countries": {
+    "PE": "Peru",
+    "EC": "Ecuador",
+    "CO": "Colombia",
+    "DO": "Dominicana",
+    "SV": "Salvador",
+    "CR": "CostaRica",
+    "BO": "Bolivia",
+    "MX": "Mexico",
+    "CL": "Chile",
+    "GT": "Guatemala",
+    "PA": "Panama",
+    "PR": "PuertoRico"
+  },
+  "suffix": {
+    "MejoraContinua": "MC"
+  }
 }

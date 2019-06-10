@@ -1,9 +1,14 @@
 import json
-class util:
-    def get_value_json(j):
+
+
+class Util:
+    def __init__(self, j):
+        self.j = j
+
+    def get_value_json(self):
         values = []
-        data_string = json.dumps(j)
+        data_string = json.dumps(self.j)
         decoded = json.loads(data_string)
-        for key,value in decoded.items():
-           values.append(value)
+        for value in decoded.items():
+            values.append(value)
         return values
