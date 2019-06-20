@@ -1,7 +1,7 @@
 import pymssql
 import json
 
-from ConfigDB.Configurations import Configurations
+from Configurations import Configurations
 
 
 class Database:

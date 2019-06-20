@@ -1,4 +1,4 @@
-from engine.ConfigDB.Database import Database
+from Database import Database
 
 
 def main():
@@ -10,7 +10,7 @@ def main():
     cursor.execute(query)
     row = cursor.fetchone()
     while row:
-        query_line.append(row[0].rstrip() + '\n')
+        query_line.append(str(row[1]) + '\n')
         row = cursor.fetchone()
 
     db.Close()

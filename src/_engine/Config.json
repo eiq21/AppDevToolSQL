@@ -1,0 +1,10 @@
+{
+  "SQL": {
+    "driver": "{ODBC Driver 17 for SQL Server}",
+    "server": "DEVPC\\SQL2017",
+    "user": "sa",
+    "password": "Malaga21",
+    "database": "Demo01",
+    "database_default": "master"
+  }
+}
