@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/eiq21/AppDevToolSQL#readme",
   "devDependencies": {
-    "electron": "^5.0.2"
+    "electron": "^18.3.7"
   },
   "dependencies": {
     "electron-reload": "^1.4.0",
